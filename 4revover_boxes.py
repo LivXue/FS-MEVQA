@@ -82,5 +82,5 @@ if __name__ == '__main__':
 
         results[k] = {'answer': processes[k]['predicted_answer'], 'explanation': exp, 'boxes': cur_boxes}
 
-    with open("MEAgent_explanations.json", "w") as f:
+    with open("results/MEAgent_results.json", "w") as f:
         json.dump(results, f)
