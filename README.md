@@ -1,5 +1,5 @@
 # FS-MEVQA
-Few-Shot Multimodal Explaining for Visual Question Answering
+Few-Shot Multimodal Explanation for Visual Question Answering (FS-MEVQA)
 
 ### Dataset
 We release the SME dataset in `dataset/dataset.zip&dataset.z01`, inlcuding questions, answers, and multimodal explanations. However, the images should be downloaded from the [GQA source](https://downloads.cs.stanford.edu/nlp/data/gqa/images.zip).
@@ -14,3 +14,11 @@ If you want to reimplement our experiments on the SME dataset, you can just run 
 
 ### Our Results
 We provide our results in `results/MEAgent_results.json`.
+
+### Evaluation
+We provide the evaluation script in `evaluation.py`. The detailed metrics are implemented in `language_metrics.py`, `visual_metrics.py`, `attribution_metric.py` in the `metrics` folder.
+
+Furthermore, you should download the [pycocoevalcap package](https://github.com/sks3i/pycocoevalcap) and put it in `metrics`, which is needed for language evaluation.
+
+### Baseline
+We provide the implementation of GPT-4V for our task in `GPT4V_baseline.py`.
