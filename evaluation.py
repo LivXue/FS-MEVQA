@@ -20,7 +20,7 @@ class evaluator():
 
 
 if __name__ == '__main__':
-    res = json.load(open("MEVQA_explanations.json"))
+    res = json.load(open("MEAgent_results.json"))
 
     gts = json.load(open("dataset/MEGQA_test.json"))
     gts = {k: gts[k] for k in res}
