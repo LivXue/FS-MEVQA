@@ -13,7 +13,7 @@ parser.add_argument("--data", type=str, default='./processed_data', help="path t
 parser.add_argument("--save", type=str, default='./processed_data', help="path for saving the data")
 args = parser.parse_args()
 
-client = openai.OpenAI(api_key="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", max_retries=3,
+client = openai.OpenAI(api_key="Your OpenAI API Key", max_retries=3,
                        timeout=httpx.Timeout(20.0, read=10.0, write=10.0, connect=3.0))
 
 conflict_a = {'sign': 'street sign', 'sign': 'stop sign', 'sign': 'traffic sign',  'car': 'train car',
