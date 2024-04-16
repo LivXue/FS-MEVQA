@@ -38,7 +38,7 @@ def reasoning(img_path, question):
         IMAGE=image.convert('RGB')
     )
 
-    # visual programming
+    # multimodal programming
     program, _ = program_generator.generate(dict(question=question))
     result, state, process = interpreter.execute(program, init_state, inspect='text')
 
