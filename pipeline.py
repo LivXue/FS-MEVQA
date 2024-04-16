@@ -12,6 +12,7 @@ from prompts.program_prompt import create_prompt as program_prompt
 
 os.environ['OPENAI_API_KEY'] = 'Your OpenAI API key'
 
+# for colored output
 colors = [(0,0,255), (0,255,0), (0,255,255), (255,0,0), (255,0,255), (255,255,0)]
 p_colors = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN]
 
