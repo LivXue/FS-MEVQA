@@ -5,7 +5,6 @@ from PIL import Image
 from functools import partial
 import argparse
 import json
-import pickle
 
 from tqdm import tqdm
 
@@ -13,9 +12,9 @@ from engine.utils import ProgramGenerator
 from prompts.program_prompt import create_prompt
 
 parser = argparse.ArgumentParser(description='Generate programs')
-parser.add_argument('--data_dir', type=str, default='dataset/data/val_balanced_questions.json', help='input data directory')
+parser.add_argument('--data_dir', type=str, default='dataset/data/SME_test.json', help='input data directory')
 parser.add_argument('--input_image_dir', type=str, default='../images/', help='input image directory')
-parser.add_argument('--output_dir', type=str, default='dataset/processed_data/val_programs_new.json', help='output data directory')
+parser.add_argument('--output_dir', type=str, default='dataset/processed_data/test_programs.json', help='output data directory')
 parser.add_argument('--output_image_dir', type=str, default='dataset/images/', help='output image directory')
 parser.add_argument('--sampling_num', type=int, default=500, help='sampling number')
 
@@ -28,9 +27,7 @@ if __name__ == '__main__':
     generator = ProgramGenerator(prompter=prompter)
 
     all_data = json.load(open(args.data_dir))
-    #sampled_ids = random.sample(list(all_data.keys()), args.sampling_num)
     sampled_ids = list(all_data.keys())
-    #sampled_ids = pickle.load(open("dataset/bad_ids.pkl", "rb"))
 
     output_data = {}
     for sampled_id in tqdm(sampled_ids):

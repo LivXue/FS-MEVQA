@@ -14,8 +14,8 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "6"
 
 if __name__ == '__main__':
     processes = json.load(open("dataset/processed_data/processes.json"))
-    questions = json.load(open("dataset/MEGQA_test.json"))
-    explanation = json.load(open("generated_explanations.json"))
+    questions = json.load(open("dataset/SME_test.json"))
+    explanation = json.load(open("results/generated_explanations.json"))
     qids = list(explanation.keys())
 
     results = {}

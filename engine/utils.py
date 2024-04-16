@@ -13,7 +13,7 @@ class Program:
 
 
 class ProgramInterpreter:
-    def __init__(self, dataset='MEVQA'):
+    def __init__(self, dataset='SME'):
         self.step_interpreters = register_step_interpreters(dataset)
 
     def execute_step(self, prog_step, inspect):

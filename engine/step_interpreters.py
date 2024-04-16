@@ -969,8 +969,8 @@ def dummy(images, **kwargs):
     return images, False
 
 
-def register_step_interpreters(dataset='MEVQA'):
-    if dataset == 'MEVQA':
+def register_step_interpreters(dataset='SME'):
+    if dataset == 'SME':
         return dict(
             LOC=LocInterpreter(),
             COUNT=CountInterpreter(),

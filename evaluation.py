@@ -22,7 +22,7 @@ class evaluator():
 if __name__ == '__main__':
     res = json.load(open("results/MEAgent_results.json"))
 
-    gts = json.load(open("dataset/MEGQA_test.json"))
+    gts = json.load(open("dataset/SME_test.json"))
     gts = {k: gts[k] for k in res}
     assert res.keys() == gts.keys()
 

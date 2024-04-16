@@ -17,7 +17,7 @@ os.environ['OPENAI_API_KEY'] = 'Your OpenAI API key'
 
 if __name__ == '__main__':
     processes = json.load(open("dataset/processed_data/processes.json"))
-    questions = json.load(open("dataset/MEGQA_test.json"))
+    questions = json.load(open("dataset/SME_test.json"))
     prompter = partial(create_prompt, method='all')
     generator = ProgramGenerator(prompter=prompter)
     explanation = {}
@@ -25,7 +25,6 @@ if __name__ == '__main__':
     for k in tqdm(qids):
         p = processes[k]
         q = p['question']
-        #img_id = p['image_id']
         try:
             process = p['process']
         except:
@@ -43,5 +42,5 @@ if __name__ == '__main__':
 
         explanation[k] = exp
 
-    with open("generated_explanations.json", "w") as f:
+    with open("results/generated_explanations.json", "w") as f:
         json.dump(explanation, f)

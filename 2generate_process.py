@@ -21,7 +21,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = "7"
 
 
 if __name__ == '__main__':
-    interpreter = ProgramInterpreter(dataset='MEVQA')
+    interpreter = ProgramInterpreter(dataset='SME')
 
     data = json.load(open(args.input_dir))
 

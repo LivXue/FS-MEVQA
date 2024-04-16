@@ -2,14 +2,18 @@ import os
 from functools import partial
 
 from PIL import Image
+import cv2
+from colorama import Fore
 
 from engine.utils import ProgramGenerator, ProgramInterpreter
 from prompts.explanation_prompt import create_prompt as interpretation_prompt
 from prompts.program_prompt import create_prompt as program_prompt
-from visualization import *
 
 
 os.environ['OPENAI_API_KEY'] = 'Your OpenAI API key'
+
+colors = [(0,0,255), (0,255,0), (0,255,255), (255,0,0), (255,0,255), (255,255,0)]
+p_colors = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYAN]
 
 program_prompter = partial(program_prompt, method='all')
 program_generator = ProgramGenerator(prompter=program_prompter)
@@ -17,6 +21,13 @@ interpreter = ProgramInterpreter(dataset='MEVQA')
 locator = interpreter.step_interpreters['LOC']
 interpretation_prompter = partial(interpretation_prompt, method='all')
 interpretation_generator = ProgramGenerator(prompter=interpretation_prompter)
+
+
+def add_boxes(img, boxes, color):
+    for box in boxes:
+        cv2.rectangle(img, (int(box[0]), int(box[1])), (int(box[2]), int(box[3])), color, 2)
+
+    return img
 
 
 def reasoning(img_path, question):
