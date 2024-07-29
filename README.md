@@ -1,5 +1,5 @@
 # FS-MEVQA
-Few-Shot Multimodal Explanation for Visual Question Answering (FS-MEVQA)
+Authors' source for ACM MM 2024 paper "Few-Shot Multimodal Explanation for Visual Question Answering" (FS-MEVQA)
 
 ### Dataset
 We release the SME dataset in `dataset/dataset.zip`, inlcuding questions, answers, and multimodal explanations. 
