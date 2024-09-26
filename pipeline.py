@@ -18,7 +18,7 @@ p_colors = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.BLUE, Fore.MAGENTA, Fore.CYA
 
 program_prompter = partial(program_prompt, method='all')
 program_generator = ProgramGenerator(prompter=program_prompter)
-interpreter = ProgramInterpreter(dataset='MEVQA')
+interpreter = ProgramInterpreter(dataset='SME')
 locator = interpreter.step_interpreters['LOC']
 interpretation_prompter = partial(interpretation_prompt, method='all')
 interpretation_generator = ProgramGenerator(prompter=interpretation_prompter)
