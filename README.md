@@ -3,7 +3,7 @@ Authors' source for ACM MM 2024 paper "Few-Shot Multimodal Explanation for Visua
 
 ### Dataset
 We release the SME dataset in `dataset/dataset.zip`, inlcuding questions, answers, and multimodal explanations. 
-You can also download the dataset from [Huggingface Datasets](https://huggingface.co/datasets/LivXue/SME).
+You can also download the dataset from [Huggingface Datasets](https://huggingface.co/datasets/LivXue/Standard-Multimodal-Explanation).
 The images should be downloaded from the [GQA source](https://downloads.cs.stanford.edu/nlp/data/gqa/images.zip).
 
 If you are interesting in our dataset construction, you can refer to `1extract_semantic_structure.py`, `2semantic_tree_to_text.py`, `3correct_some_issues.py`, `4separate_text_and_box.py`, `5complete_grammar.py`, `6GPT_check_grammar.py`, `7Add_mannual_corrections.py` in the `dataset` folder.
